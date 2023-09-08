@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="board-container">
+    <h1>Boggle</h1>
+    <div class="score-container">
+        <div id="current-score">Score: 0</div>
+        <div id="timer">Time Left: 60 seconds</div>
+        <div id="high-score">High Score: 0</div>
+        <div id="total-games">Total Games Played: 0</div>
+    </div>
+
+    <div class="table-container">
+        <table>
+            {% for row in board %}
+            <tr>
+                {% for cell in row %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="form-container">
+        <form id="guess-form">
+            <input type="text" id="guess" placeholder="Guess" autocomplete="off" name="guess" required>
+            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        </form>
+
+        <p id="guess-result"></p>
+
+        <button id="reset-board" class="btn btn-secondary btn-sm">Reset Board</button>
+    </div>
+
+
+
+</div>
+{% endblock %}
